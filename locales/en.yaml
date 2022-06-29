@@ -1,0 +1,6 @@
+buttons:
+  hsLoginOut: LoginOut
+
+menus:
+  hshome: Home
+  hslogin: Login

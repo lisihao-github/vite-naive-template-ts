@@ -28,7 +28,9 @@
       "node",
       "vite/client",
       "element-plus/global",
-      "unplugin-vue-define-options"
+      "unplugin-vue-define-options",
+      "@pureadmin/table/volar",
+      "@pureadmin/descriptions/volar"
     ],
     "typeRoots": ["./node_modules/@types/", "./types"]
   },

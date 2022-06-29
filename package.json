@@ -28,6 +28,13 @@
   "dependencies": {
     "@amap/amap-jsapi-loader": "^1.0.1",
     "@ctrl/tinycolor": "^3.4.1",
+    "@formily/core": "^2.1.9",
+    "@formily/grid": "^2.1.9",
+    "@formily/json-schema": "^2.1.9",
+    "@formily/reactive-vue": "^2.1.9",
+    "@formily/shared": "^2.1.9",
+    "@formily/validator": "^2.1.9",
+    "@formily/vue": "^2.1.9",
     "@logicflow/core": "^1.1.16",
     "@logicflow/extension": "^1.1.16",
     "@pureadmin/components": "^1.0.6",
@@ -143,7 +150,7 @@
     "vite-svg-loader": "^3.3.0",
     "vue-eslint-parser": "^8.2.0"
   },
-  "repository": "git@github.com:xiaoxian521/vue-pure-admin.git",
-  "author": "xiaoxian521",
+  "repository": "git@github.com:lisihao-github/vite-naive-template-ts.git",
+  "author": "lisihao-github",
   "license": "MIT"
 }
