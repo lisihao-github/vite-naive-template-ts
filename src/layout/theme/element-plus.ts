@@ -22,7 +22,7 @@ const formula = {
   "light-6": "color(primary tint(60%))",
   "light-7": "color(primary tint(70%))",
   "light-8": "color(primary tint(80%))",
-  "light-9": "color(primary tint(90%))",
+  "light-9": "color(primary tint(90%))"
 };
 
 // 把生成的样式表写入到style中
@@ -41,7 +41,7 @@ export const createNewStyle = (
   // 在当前ep的默认样式表中标记需要替换的色值
   let cssText = getStyleTemplate(epCss);
   // 遍历生成的色值表，在 默认样式表 进行全局替换
-  Object.keys(colors).forEach((key) => {
+  Object.keys(colors).forEach(key => {
     cssText = cssText.replace(
       new RegExp("(:|\\s+)" + key, "g"),
       "$1" + colors[key]
@@ -55,9 +55,9 @@ export const createColors = (
 ): Record<string, any> => {
   if (!primary) return;
   const colors = {
-    primary,
+    primary
   };
-  Object.keys(formula).forEach((key) => {
+  Object.keys(formula).forEach(key => {
     const value = formula[key].replace(/primary/, primary);
     colors[key] = "#" + rgbHex(convert(value));
   });
@@ -76,9 +76,9 @@ const getStyleTemplate = (data: Record<string, any>): Record<string, any> => {
     "#b3d8ff": "light-6",
     "#c6e2ff": "light-7",
     "#d9ecff": "light-8",
-    "#ecf5ff": "light-9",
+    "#ecf5ff": "light-9"
   };
-  Object.keys(colorMap).forEach((key) => {
+  Object.keys(colorMap).forEach(key => {
     const value = colorMap[key];
     data = data.replace(new RegExp(key, "ig"), value);
   });

@@ -24,14 +24,14 @@ const pathResolve = (dir: string): string => {
 // 设置别名
 const alias: Record<string, string> = {
   "/@": pathResolve("src"),
-  "@build": pathResolve("build"),
+  "@build": pathResolve("build")
 };
 
 const { dependencies, devDependencies, name, version } = pkg;
 
 const __APP_INFO__ = {
   pkg: { dependencies, devDependencies, name, version },
-  lastBuildTime: dayjs(new Date()).format("YYYY-MM-DD HH:mm:ss"),
+  lastBuildTime: dayjs(new Date()).format("YYYY-MM-DD HH:mm:ss")
 };
 
 export default ({ command, mode }: ConfigEnv): UserConfigExport => {
@@ -40,14 +40,14 @@ export default ({ command, mode }: ConfigEnv): UserConfigExport => {
     VITE_LEGACY,
     VITE_PUBLIC_PATH,
     VITE_PROXY_DOMAIN,
-    VITE_PROXY_DOMAIN_REAL,
+    VITE_PROXY_DOMAIN_REAL
   } = warpperEnv(loadEnv(mode, root));
 
   return {
     base: VITE_PUBLIC_PATH,
     root,
     resolve: {
-      alias,
+      alias
     },
     // 服务端渲染
     server: {
@@ -64,25 +64,25 @@ export default ({ command, mode }: ConfigEnv): UserConfigExport => {
                 target: VITE_PROXY_DOMAIN_REAL,
                 // ws: true,
                 changeOrigin: true,
-                rewrite: (path: string) => regExps(path, VITE_PROXY_DOMAIN),
-              },
+                rewrite: (path: string) => regExps(path, VITE_PROXY_DOMAIN)
+              }
             }
-          : null,
+          : null
     },
     plugins: getPluginsList(command, VITE_LEGACY),
     optimizeDeps: {
       include: ["pinia", "vue-i18n", "lodash-es", "@vueuse/core"],
-      exclude: ["@pureadmin/theme/dist/browser-utils"],
+      exclude: ["@pureadmin/theme/dist/browser-utils"]
     },
     build: {
       sourcemap: false,
       brotliSize: false,
       // 消除打包大小超过500kb警告
-      chunkSizeWarningLimit: 4000,
+      chunkSizeWarningLimit: 4000
     },
     define: {
       __INTLIFY_PROD_DEVTOOLS__: false,
-      __APP_INFO__: JSON.stringify(__APP_INFO__),
-    },
+      __APP_INFO__: JSON.stringify(__APP_INFO__)
+    }
   };
 };

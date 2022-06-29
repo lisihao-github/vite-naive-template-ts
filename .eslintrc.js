@@ -39,7 +39,9 @@ module.exports = {
     "@vue/prettier",
     "@vue/eslint-config-typescript"
   ],
+  /* 指定如何解析语法。可以为空，但若不为空，只能配该值，原因见下文。*/
   parser: "vue-eslint-parser",
+  /* 优先级低于parse的语法解析配置 */
   parserOptions: {
     parser: "@typescript-eslint/parser",
     ecmaVersion: 2020,
@@ -117,4 +119,4 @@ module.exports = {
       }
     ]
   }
-}
+};

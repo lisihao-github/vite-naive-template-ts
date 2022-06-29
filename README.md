@@ -1,7 +1,7 @@
 <!--
  * @Author: 李思豪
  * @Date: 2022-06-01 15:56:14
- * @LastEditTime: 2022-06-27 11:23:07
+ * @LastEditTime: 2022-06-27 13:37:30
  * @Description: file content
  * @LastEditors: 李思豪
 -->
@@ -22,8 +22,3 @@ Since TypeScript cannot handle type information for `.vue` imports, they are shi
 2. Reload the VS Code window by running `Developer: Reload Window` from the command palette.
 
 You can learn more about Take Over mode [here](https://github.com/johnsoncodehk/volar/discussions/471).
-
-使用到的插件
-unocss
-stylelint-config-standard
-stylelint-order

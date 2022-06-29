@@ -86,6 +86,6 @@ export function viteBuildInfo(): Plugin {
           );
         });
       }
-    },
+    }
   };
 }
