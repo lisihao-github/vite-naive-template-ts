@@ -1,7 +1,7 @@
 /*
  * @Author: 李思豪
  * @Date: 2022-06-29 10:39:35
- * @LastEditTime: 2022-06-29 15:21:46
+ * @LastEditTime: 2022-06-30 15:30:25
  * @Description: file content
  * @LastEditors: 李思豪
  */
@@ -36,11 +36,10 @@ import {
 } from "./utils";
 
 import homeRouter from "./modules/home";
-import errorRouter from "./modules/error";
 import remainingRouter from "./modules/remainingRouter";
 
 // 原始静态路由（未做任何处理）
-const routes = [homeRouter, errorRouter];
+const routes = [homeRouter];
 
 // 导出处理后的静态路由（三级及以上的路由全部拍成二级）
 export const constantRoutes: Array<RouteRecordRaw> = formatTwoStageRoutes(

@@ -1,7 +1,7 @@
 /*
  * @Author: 李思豪
  * @Date: 2022-06-01 15:56:14
- * @LastEditTime: 2022-06-29 13:33:45
+ * @LastEditTime: 2022-06-30 15:20:00
  * @Description: file content
  * @LastEditors: 李思豪
  */
@@ -10,7 +10,7 @@ import router from "./router";
 import { setupStore } from "/@/store";
 import ElementPlus from "element-plus";
 import { getServerConfig } from "./config";
-import { createApp } from "vue";
+import { createApp, Directive } from "vue";
 import { useI18n } from "../src/plugins/i18n";
 import { MotionPlugin } from "@vueuse/motion";
 import VirtualScroller from "vue-virtual-scroller";
@@ -38,10 +38,10 @@ import "vue-virtual-scroller/dist/vue-virtual-scroller.css";
 const app = createApp(App);
 
 // 自定义指令
-// import * as directives from "/@/directives";
-// Object.keys(directives).forEach(key => {
-//   app.directive(key, (directives as { [key: string]: Directive })[key]);
-// });
+import * as directives from "/@/directives";
+Object.keys(directives).forEach(key => {
+  app.directive(key, (directives as { [key: string]: Directive })[key]);
+});
 
 // 全局注册`@iconify/vue`图标库
 import {
