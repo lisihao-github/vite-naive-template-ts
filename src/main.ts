@@ -1,7 +1,7 @@
 /*
  * @Author: 李思豪
  * @Date: 2022-06-01 15:56:14
- * @LastEditTime: 2022-06-30 15:20:00
+ * @LastEditTime: 2022-07-01 09:53:58
  * @Description: file content
  * @LastEditors: 李思豪
  */
@@ -13,12 +13,8 @@ import { getServerConfig } from "./config";
 import { createApp, Directive } from "vue";
 import { useI18n } from "../src/plugins/i18n";
 import { MotionPlugin } from "@vueuse/motion";
-import VirtualScroller from "vue-virtual-scroller";
 // import { useTable } from "../src/plugins/vxe-table";
 import { injectResponsiveStorage } from "/@/utils/storage/responsive";
-
-// import Table from "@pureadmin/table";
-// import PureDescriptions from "@pureadmin/descriptions";
 
 import "uno.css";
 import "animate.css";
@@ -33,7 +29,6 @@ import "@pureadmin/components/dist/theme.css";
 import "./assets/iconfont/iconfont.js";
 import "./assets/iconfont/iconfont.css";
 import "v-contextmenu/dist/themes/default.css";
-import "vue-virtual-scroller/dist/vue-virtual-scroller.css";
 
 const app = createApp(App);
 
@@ -58,13 +53,7 @@ getServerConfig(app).then(async config => {
   await router.isReady();
   injectResponsiveStorage(app, config);
   setupStore(app);
-  app
-    .use(MotionPlugin)
-    .use(useI18n)
-    .use(ElementPlus)
-    // .use(Table)
-    // .use(PureDescriptions)
-    // .use(useTable)
-    .use(VirtualScroller);
+  app.use(MotionPlugin).use(useI18n).use(ElementPlus);
+  // .use(useTable)
   app.mount("#app");
 });

@@ -1,7 +1,7 @@
 <!--
  * @Author: 李思豪
  * @Date: 2022-06-29 15:47:31
- * @LastEditTime: 2022-06-29 15:53:56
+ * @LastEditTime: 2022-07-01 10:26:03
  * @Description: file content
  * @LastEditors: 李思豪
 -->
@@ -9,7 +9,7 @@
 import { ref, reactive } from "vue";
 import Motion from "../utils/motion";
 import { phoneRules } from "../utils/rule";
-import { message } from "@pureadmin/components";
+import { ElMessage } from "element-plus";
 import type { FormInstance } from "element-plus";
 import { useVerifyCode } from "../utils/verifyCode";
 import { useUserStoreHook } from "/@/store/modules/user";
@@ -30,7 +30,7 @@ const onLogin = async (formEl: FormInstance | undefined) => {
     if (valid) {
       // 模拟登录请求，需根据实际开发进行修改
       setTimeout(() => {
-        message.success("登录成功");
+        ElMessage.success("登录成功");
         loading.value = false;
       }, 2000);
     } else {

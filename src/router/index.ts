@@ -1,7 +1,7 @@
 /*
  * @Author: 李思豪
  * @Date: 2022-06-29 10:39:35
- * @LastEditTime: 2022-06-30 15:30:25
+ * @LastEditTime: 2022-07-01 10:57:15
  * @Description: file content
  * @LastEditors: 李思豪
  */
@@ -79,6 +79,7 @@ export const router: Router = createRouter({
 // 路由白名单
 const whiteList = ["/login"];
 
+// 路由守卫
 router.beforeEach((to: toRouteType, _from, next) => {
   if (to.meta?.keepAlive) {
     const newMatched = to.matched;

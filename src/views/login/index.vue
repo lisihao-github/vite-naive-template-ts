@@ -1,7 +1,7 @@
 <!--
  * @Author: 李思豪
  * @Date: 2022-06-29 11:08:08
- * @LastEditTime: 2022-06-29 15:55:29
+ * @LastEditTime: 2022-07-01 10:43:18
  * @Description: file content
  * @LastEditors: 李思豪
 -->
@@ -14,14 +14,14 @@ import qrCode from "./components/qrCode.vue";
 import regist from "./components/regist.vue";
 import update from "./components/update.vue";
 import { initRouter } from "/@/router/utils";
-import { message } from "@pureadmin/components";
+import { ElMessage } from "element-plus";
 import type { FormInstance } from "element-plus";
 import { storageSession } from "/@/utils/storage";
 import { ref, reactive, watch, computed } from "vue";
 import { operates, thirdParty } from "./utils/enums";
 import { useUserStoreHook } from "/@/store/modules/user";
 import { bg, avatar, currentWeek } from "./utils/static";
-import { ReImageVerify } from "/@/components/ReImageVerify";
+import { MyImageVerify } from "/@/components/MyImageVerify";
 import { useRenderIcon } from "/@/components/MyIcon/src/hooks";
 
 defineOptions({
@@ -60,7 +60,7 @@ const onLogin = async (formEl: FormInstance | undefined) => {
           accessToken: "eyJhbGciOiJIUzUxMiJ9.test"
         });
         initRouter("admin").then(() => {});
-        message.success("登录成功");
+        ElMessage.success("登录成功");
         router.push("/");
       }, 2000);
     } else {
@@ -130,7 +130,7 @@ function onHandle(value) {
                 "
               >
                 <template v-slot:append>
-                  <ReImageVerify v-model:code="imgCode" />
+                  <MyImageVerify v-model:code="imgCode" />
                 </template>
               </el-input>
             </el-form-item>

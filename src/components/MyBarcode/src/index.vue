@@ -1,9 +1,16 @@
+<!--
+ * @Author: 李思豪
+ * @Date: 2022-06-29 15:53:15
+ * @LastEditTime: 2022-07-01 10:42:02
+ * @Description: file content
+ * @LastEditors: 李思豪
+-->
 <script setup lang="ts">
 import JsBarcode from "jsbarcode";
 import { ref, onMounted } from "vue";
 
 defineOptions({
-  name: "ReBarcode"
+  name: "MyBarcode"
 });
 
 const props = defineProps({

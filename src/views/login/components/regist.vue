@@ -2,7 +2,7 @@
 import { ref, reactive } from "vue";
 import Motion from "../utils/motion";
 import { updateRules } from "../utils/rule";
-import { message } from "@pureadmin/components";
+import { ElMessage } from "element-plus";
 import type { FormInstance } from "element-plus";
 import { useVerifyCode } from "../utils/verifyCode";
 import { useUserStoreHook } from "/@/store/modules/user";
@@ -42,12 +42,12 @@ const onUpdate = async (formEl: FormInstance | undefined) => {
       if (checked.value) {
         // 模拟请求，需根据实际开发进行修改
         setTimeout(() => {
-          message.success("注册成功");
+          ElMessage.success("注册成功");
           loading.value = false;
         }, 2000);
       } else {
         loading.value = false;
-        message.warning("请勾选隐私政策");
+        ElMessage.warning("请勾选隐私政策");
       }
     } else {
       loading.value = false;

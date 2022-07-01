@@ -1,9 +1,16 @@
+<!--
+ * @Author: 李思豪
+ * @Date: 2022-06-29 15:55:45
+ * @LastEditTime: 2022-07-01 10:42:47
+ * @Description: file content
+ * @LastEditors: 李思豪
+-->
 <script setup lang="ts">
 import { watch } from "vue";
 import { useImageVerify } from "./hooks";
 
 defineOptions({
-  name: "ReImageVerify"
+  name: "MyImageVerify"
 });
 
 interface Props {
